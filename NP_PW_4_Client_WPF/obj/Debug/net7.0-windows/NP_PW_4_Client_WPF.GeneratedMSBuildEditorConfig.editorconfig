@@ -8,4 +8,4 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = NP_PW_4_Client_WPF
-build_property.ProjectDir = C:\Users\Денис\RiderProjects\NP_PW_4_Client_WPF\NP_PW_4_Client_WPF\
+build_property.ProjectDir = C:\Users\Денис\RiderProjects\TCP_Client_WPF\NP_PW_4_Client_WPF\

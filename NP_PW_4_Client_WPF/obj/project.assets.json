@@ -51,25 +51,26 @@
     ]
   },
   "packageFolders": {
-    "/Users/denys_korliakov/.nuget/packages/": {}
+    "C:\\Users\\Денис\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/denys_korliakov/Desktop/C#/NP_PW_4_Client_WPF/NP_PW_4_Client_WPF/NP_PW_4_Client_WPF.csproj",
+      "projectUniqueName": "C:\\Users\\Денис\\RiderProjects\\TCP_Client_WPF\\NP_PW_4_Client_WPF\\NP_PW_4_Client_WPF.csproj",
       "projectName": "NP_PW_4_Client_WPF",
-      "projectPath": "/Users/denys_korliakov/Desktop/C#/NP_PW_4_Client_WPF/NP_PW_4_Client_WPF/NP_PW_4_Client_WPF.csproj",
-      "packagesPath": "/Users/denys_korliakov/.nuget/packages/",
-      "outputPath": "/Users/denys_korliakov/Desktop/C#/NP_PW_4_Client_WPF/NP_PW_4_Client_WPF/obj/",
+      "projectPath": "C:\\Users\\Денис\\RiderProjects\\TCP_Client_WPF\\NP_PW_4_Client_WPF\\NP_PW_4_Client_WPF.csproj",
+      "packagesPath": "C:\\Users\\Денис\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Денис\\RiderProjects\\TCP_Client_WPF\\NP_PW_4_Client_WPF\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/denys_korliakov/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\Денис\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net7.0-windows"
       ],
       "sources": {
-        "/usr/local/share/dotnet/library-packs": {},
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -112,7 +113,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.200/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }

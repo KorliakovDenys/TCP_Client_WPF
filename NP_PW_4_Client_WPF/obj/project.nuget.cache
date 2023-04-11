@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "ysHxwg8AkLB/UD1wCrUsP7c9NEnzEIkdjqkXvynBfW9t94H+QvHAKxsOzbMMZQ20dgdpx+yFa1IK/tDC1vTNIA==",
+  "dgSpecHash": "p1QKm4+am7wJVmK1Pjt45mW+vcdX5PctZ3BYvk4XZJe8xCzBUjrWJ/UMRykQ1egDR21JysJusEsERR2IxElGVQ==",
   "success": true,
-  "projectFilePath": "/Users/denys_korliakov/Desktop/C#/NP_PW_4_Client_WPF/NP_PW_4_Client_WPF/NP_PW_4_Client_WPF.csproj",
+  "projectFilePath": "C:\\Users\\Денис\\RiderProjects\\TCP_Client_WPF\\NP_PW_4_Client_WPF\\NP_PW_4_Client_WPF.csproj",
   "expectedPackageFiles": [
-    "/Users/denys_korliakov/.nuget/packages/prism.core/8.1.97/prism.core.8.1.97.nupkg.sha512"
+    "C:\\Users\\Денис\\.nuget\\packages\\prism.core\\8.1.97\\prism.core.8.1.97.nupkg.sha512"
   ],
   "logs": []
 }
