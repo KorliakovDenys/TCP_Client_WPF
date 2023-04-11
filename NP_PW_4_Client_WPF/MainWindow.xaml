@@ -1,0 +1,44 @@
+﻿<Window x:Class="NP_PW_4_Client_WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NP_PW_4_Client_WPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" DataContext="{Binding ElementName=_viewModel}" MinHeight="300" MinWidth="450">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="48" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="48" />
+        </Grid.RowDefinitions>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Margin="6 12" Text="IP: " HorizontalAlignment="Right"/>
+            <TextBox Grid.Column="1" Margin="6 12" Text="{Binding IpAddress}" />
+            <TextBlock Grid.Column="2" Margin="6 12" Text="Port: " HorizontalAlignment="Right"/>
+            <TextBox Grid.Column="3" Margin="6 12" Text="{Binding Port}" />
+            <Button Grid.Column="4" Margin="6 12" Content="Connect" IsEnabled="{Binding IsDisconnected}"
+                    Command="{Binding ConnectCommand}" />
+            <Button Grid.Column="5" Margin="6 12" Content="Disconnect" IsEnabled="{Binding IsConnected}"
+                    Command="{Binding DisconnectCommand}" />
+        </Grid>
+        <TextBox Grid.Row="1" IsReadOnly="True" Margin="6 0" Text="{Binding Messages}" />
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="5*" />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <TextBox Margin="6 12" Text="{Binding MessageInput}" />
+            <Button Grid.Column="1" Margin="6 12" Content="Send" IsEnabled="{Binding IsConnected}"
+                    Command="{Binding SendMessageCommand}" />
+        </Grid>
+    </Grid>
+</Window>
