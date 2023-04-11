@@ -17,43 +17,48 @@ public class TCPClientController{
     private NetworkStream _networkStream;
 
     private Socket _client;
-    
+
     private Task _readingTask;
-    
+
     private Task _writingTask;
-    
+
     private bool disposed;
-    
+
     public delegate void ConnectionHandler();
-    
+
     public delegate void MessageHandler(string message);
 
     public event ConnectionHandler Connected;
 
     public event ConnectionHandler Disconnected;
-    
+
     public event MessageHandler MessageReceived;
 
     public TCPClientController(){ }
 
     public async Task ConnectToServerAsync(string ip, int port){
-        _tcpClient = new TcpClient();
-        
-        await _tcpClient.ConnectAsync(IPAddress.Parse(ip), port);
-        _client = _tcpClient.Client;
-        _networkStream = _tcpClient.GetStream();
-        _channel = Channel.CreateUnbounded<string>();
-        
-        _writingTask = RunWritingLoop();
-        _readingTask = RunReadingLoop();
-        Connected?.Invoke();
+        try{
+            _tcpClient = new TcpClient();
+
+            await _tcpClient.ConnectAsync(IPAddress.Parse(ip), port);
+            _client = _tcpClient.Client;
+            _networkStream = _tcpClient.GetStream();
+            _channel = Channel.CreateUnbounded<string>();
+
+            _writingTask = RunWritingLoop();
+            _readingTask = RunReadingLoop();
+            Connected?.Invoke();
+        }
+        catch (Exception e){
+            MessageReceived?.Invoke(e.Message);
+        }
     }
 
     public async Task DisconnectFromServerAsync(){
         _channel.Writer.Complete();
         _networkStream.Close();
     }
-    
+
     private async Task RunReadingLoop(){
         try{
             var headerBuffer = new byte[sizeof(int)];
@@ -82,6 +87,7 @@ public class TCPClientController{
         catch (Exception ex){
             MessageReceived?.Invoke(ex.GetType().Name + ": " + ex.Message);
         }
+
         Disconnected?.Invoke();
     }
 

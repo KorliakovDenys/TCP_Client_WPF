@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Windows;
 using Prism.Commands;
 
 namespace NP_PW_4_Client_WPF;
@@ -93,6 +94,7 @@ public sealed class ViewModel : INotifyPropertyChanged{
     private void TcpClientControllerOnConnected(){
         IsConnected = true;
         IsDisconnected = !IsConnected;
+        Messages = "Connected.\n";
     }
 
     private void TcpClientControllerOnDisconnected(){
@@ -105,8 +107,12 @@ public sealed class ViewModel : INotifyPropertyChanged{
     }
 
     private void ExecuteConnectToServer(){
-        _tcpClientController.ConnectToServerAsync(_ipAddress, int.Parse(_port));
-        Messages = string.Empty;
+        try{
+            _tcpClientController.ConnectToServerAsync(_ipAddress, int.Parse(_port));
+        }
+        catch (Exception exception){
+            MessageBox.Show(exception.Message);
+        }
     }
 
     private void ExecuteDisconnectFromServer(){
